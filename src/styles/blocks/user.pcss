@@ -1,0 +1,77 @@
+.user {
+  display: flex;
+  flex-direction: column;
+}
+
+.user--line {
+  flex-direction: row;
+  align-items: center;
+}
+
+.user__avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 60px;
+  align-self: flex-end;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include phones() {
+    align-self: center;
+  }
+}
+
+.user__avatar--small {
+  width: 75px;
+  height: 75px;
+  margin-bottom: 0;
+  margin-right: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.user__data {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  @include phones() {
+    align-self: center;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.user__data-cell {
+  &:first-child {
+    padding-right: 60px;
+
+    @include tablets() {
+      padding-right: 30px;
+    }
+  }
+  &:last-child {
+    color: $text-white;
+  }
+
+  @include capitalize();
+}
+
+.user__name {
+  margin-bottom: 15px;
+  color: $text-white;
+  text-transform: capitalize;
+}
+
+.user__data--direction {
+  flex-direction: column;
+}
+
+.user__img {
+  height: 100%;
+  flex-basis: auto;
+}

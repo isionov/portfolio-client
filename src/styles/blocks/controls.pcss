@@ -1,0 +1,79 @@
+.controls {
+  display: flex;
+}
+
+.controls__item {
+  width: 50px;
+  height: 50px;
+  border: 1px solid $text-white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transition: 0.5s;
+  outline: none;
+  &:hover {
+    border: 1px solid $main-orange-outline;
+    .controls__icon {
+      fill: $main-orange-outline;
+      stroke: $main-orange-outline;
+    }
+  }
+  &:focus {
+    border: 1px solid $main-orange-outline;
+  }
+}
+
+.controls__icon {
+  width: 10px;
+  height: 10px;
+  stroke-width: 1px;
+  fill: $text-white;
+  transition: 0.5s;
+}
+
+.controls__icon--left {
+  transform: scaleX(-1);
+}
+
+.controls__backward--marg {
+  margin-right: 30px;
+}
+
+.controls--dark {
+  flex-direction: column;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: -50px;
+  height: 100%;
+  margin: 0;
+
+  @include phones() {
+    right: 0;
+  }
+
+  .controls__item {
+    background-color: $controls-dark-bg;
+    border-color: $controls-dark-bg;
+    border-radius: initial;
+    margin: 0;
+    height: 12.5%;
+
+    @include phones() {
+      width: 50px;
+      height: 50px;
+    }
+    &:hover {
+      transition: 0.5s;
+      border-color: $main-orange-outline;
+    }
+    &:last-child {
+      margin-bottom: 20px;
+    }
+    &:focus {
+      border: 1px solid $main-orange-outline;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.img-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+.img-link__wrap {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+.img-link__icon {
+  fill: $links-color;
+  stroke: $links-color;
+}
+.img-link__text {
+  @include capitalize();
+  color: $links-color;
+  transition: 0.5s;
+  border-bottom: 1px solid transparent;
+  &:hover {
+    border-color: $links-color;
+  }
+}

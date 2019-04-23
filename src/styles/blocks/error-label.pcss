@@ -1,0 +1,22 @@
+.error-label {
+  display: inline-block;
+  position: absolute;
+  left: 10%;
+  bottom: -27px;
+  padding: 5px 10px;
+  background: $error-color;
+  color: white;
+  opacity: 0;
+  transition: 0.5s;
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 5px solid $error-color;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+}

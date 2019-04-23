@@ -1,0 +1,79 @@
+.about {
+  background: url("../images/content/aboutBg.png") center center / cover
+    no-repeat;
+  position: relative;
+  z-index: 80;
+  min-height: 650px;
+  margin-top: -3px;
+
+  @include desktop() {
+    min-height: 650px;
+  }
+}
+
+.about__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding-top: 100px;
+
+  @include phones() {
+    padding-bottom: 100px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.about__left {
+  width: 330px;
+  margin-right: 160px;
+
+  @include tablets() {
+    margin-right: 95px;
+  }
+
+  @include phones() {
+    margin: 0;
+    margin-bottom: 45px;
+  }
+}
+
+.about__right {
+  width: 550px;
+  padding-right: 25px;
+
+  @include phones() {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.about__welcome {
+  margin-bottom: 30px;
+}
+
+.about__name {
+  @include opensans(700, normal, 36px);
+  color: $text-white;
+  margin-bottom: 35px;
+}
+
+.about__desc {
+  margin-bottom: 60px;
+}
+
+.about__ps {
+  @include opensans(400, italic, 16px);
+  position: relative;
+  &::before {
+    content: "*";
+    position: absolute;
+    top: -15px;
+    left: -46px;
+    font-size: 48px;
+    color: #ff0000;
+    opacity: 0.1;
+  }
+}

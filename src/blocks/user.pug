@@ -1,0 +1,9 @@
+.user
+    .user__avatar
+        +image("content/Me.png", "user__img","фото владельца")
+    .user__data
+        table.user__data-table
+            each row in data
+                tr.user__data-row
+                    td.user__data-cell #{row[0]}
+                    td.user__data-cell #{row[1]}

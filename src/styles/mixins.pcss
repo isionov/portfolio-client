@@ -1,0 +1,40 @@
+@mixin desktopHd() {
+  @media screen and (max-width: $bp-desktop-hd) {
+    @content;
+  }
+}
+
+@mixin desktopMid() {
+  @media screen and (max-width: $bp-desktop-mid) {
+    @content;
+  }
+}
+
+@mixin desktop() {
+  @media screen and (max-width: $bp-desktop) {
+    @content;
+  }
+}
+
+@mixin tabletsBig() {
+  @media screen and (max-width: $bp-tablets-big) {
+    @content;
+  }
+}
+@mixin tablets() {
+  @media screen and (max-width: $bp-tablets) {
+    @content;
+  }
+}
+
+@mixin phones() {
+  @media screen and (max-width: $bp-phones) {
+    @content;
+  }
+}
+
+@mixin capitalize() {
+  &:first-letter {
+    text-transform: capitalize;
+  }
+}

@@ -1,0 +1,46 @@
+.copyright {
+  display: flex;
+
+  @include desktop() {
+    flex-direction: column;
+  }
+}
+
+.copyright__column {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+
+  @include desktop() {
+    width: 70%;
+  }
+
+  @include phones() {
+    margin-left: 0;
+  }
+}
+
+.copyright__year {
+  flex-basis: 50%;
+
+  @include desktop() {
+    margin-bottom: 25px;
+  }
+
+  @include opensans(400, normal, 48px);
+  color: rgba(#fff, 0.1);
+  flex-shrink: 0;
+  flex-grow: 1;
+  line-height: 41px;
+}
+
+.copyright__username {
+  @include opensans(400, normal, 18px);
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.copyright__desc {
+  @include opensans(400, normal, 16px);
+}

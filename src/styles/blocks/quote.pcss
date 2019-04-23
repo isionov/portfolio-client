@@ -1,0 +1,17 @@
+.quote {
+  padding: 0 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include phones() {
+    max-width: 400px;
+  }
+}
+
+.quote__text {
+  margin-bottom: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
+}

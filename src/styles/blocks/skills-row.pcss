@@ -1,0 +1,43 @@
+.skills-row__list {
+  display: flex;
+
+  @include tablets() {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.skills-row__title {
+  margin-bottom: 50px;
+
+  @include capitalize();
+
+  @include tablets() {
+    margin-bottom: 40px;
+  }
+
+  @include phones() {
+    margin-bottom: 10px;
+  }
+}
+
+.skills-row__item {
+  margin-right: 70px;
+  margin-bottom: 50px;
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include desktop() {
+    margin-right: 40px;
+  }
+
+  @include phones() {
+    margin-right: 5px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    &:last-child {
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+  }
+}

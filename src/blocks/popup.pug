@@ -1,0 +1,15 @@
+.popup
+    button.popup__close(type='button')
+         +icon(`cross`, 'popup__icon-close')
+    nav.nav
+        ul.nav__list
+            -var items = [['Главная',''],['Обо мне','#section-about'],['Навыки','#section-values'],['работы','#section-preview'],['Отзывы','#section-reviews'],['Связаться','#section-connect']]
+            each item in items
+                li.nav__item
+                    a.nav__link(href=`${item[1]}`) #{item[0]}
+    ul.socials
+        -var icons = ['insta','vk','github']
+        each icon in icons
+            li.socials__item
+                a(href='#').socials_link
+                    +icon(`${icon}`, 'socials_icon socials_icon--dark')

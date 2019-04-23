@@ -1,0 +1,45 @@
+.skill {
+  width: 134px;
+  height: 134px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill__shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.skill__circle--under {
+  stroke-width: 5px;
+  stroke: $skill-circl-color-under;
+  fill: transparent;
+}
+
+.skill__circle--above {
+  stroke-width: 20px;
+  stroke: url("#skill__circle-gradient");
+  fill: transparent;
+  stroke-dashoffset: 283%;
+  transform: rotate(180deg);
+  transform-origin: 50% 50%;
+}
+
+.skill__title {
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+#skill__circle-gradient {
+  stop:nth-child(1) {
+    stop-color: $skill-circl-color-above-gradient;
+  }
+  stop:nth-child(2) {
+    stop-color: $skill-circl-color-above;
+  }
+}

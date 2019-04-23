@@ -1,0 +1,29 @@
+section.connect
+    .container.connect__container
+        .connect__title
+            h2.section-title cвязаться со мной
+        form.form.connect__content
+            .form__row
+                -
+                    var forms = [
+                        ['text', 'name','введите ваше имя', 'Ковальчук Дмитрий',"user"],
+                        ['text', 'email','Введите ваш email', 'loftschool@study.com',"envelope"],
+                    ]
+                each item in forms
+                    .form__elem
+                        label.form__elem-label(for=`form__input-${item[1]}`)
+                            +icon(`${item[4]}`, "form__elem-icon")
+                        .form__content
+                            label.form__elem-label(for=`form__input-${item[1]}`)
+                                .form__elem-title #{item[2]}
+                            input.form__input(id=`form__input-${item[1]}` type=`${item[0]}` name=`${item[1]}` placeholder=`${item[3]}`)
+                            .error-label Error
+            .form__elem-area                
+                label.form__elem-area-label(for='form-tarea')
+                    +icon(`message`, "form__elem-icon")
+                .form__content
+                    label.form__elem-area-label(for='form-tarea')
+                        .form__elem-title Сообщение к письму
+                    textarea.form__input.form__input--area(id='form-tarea' name="msg" rows="2" placeholder="Требуется ваша помощь в создании сайта. Интересуют сроки и цена вопроса")
+                .error-label Error
+            button.form__submit(type="submit") отправить

@@ -1,0 +1,6 @@
+ul.socials.socials--rounded
+    -var icons = ['insta','vk','github']
+    each icon in icons
+        li.socials__item
+            a(href='#').socials_link
+                +icon(`${icon}`, 'socials_icon')

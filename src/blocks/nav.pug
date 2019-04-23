@@ -1,0 +1,6 @@
+nav.nav.header__menu-width
+    ul.nav__list
+        -var items = [['Главная','#section-hero'],['Обо мне','#section-about'],['Навыки','#section-values'],['работы','#section-preview'],['Отзывы','#section-reviews'],['Связаться','#section-connect']]
+        each item in items
+            li.nav__item
+                a.nav__link(href=`${item[1]}`) #{item[0]}

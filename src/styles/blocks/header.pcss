@@ -1,0 +1,94 @@
+.header {
+  min-height: 160px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 70;
+
+  @include phones() {
+    max-height: 160px;
+    overflow: hidden;
+  }
+}
+
+.header__logo {
+  @include opensans(700, normal, 36px);
+}
+
+.header__menu {
+  flex-grow: 1;
+
+  @include opensans(400, normal, 16px);
+  display: flex;
+  justify-content: center;
+  margin: 0 20px;
+  max-width: 700px;
+
+  @include tablets() {
+    display: none;
+    width: 0;
+  }
+}
+
+.header__menu-width {
+  width: unset;
+
+  @include desktop() {
+    width: 100%;
+  }
+}
+
+.header__links {
+  display: flex;
+  min-width: 150px;
+
+  @include tablets() {
+    min-width: 170px;
+    margin-left: auto;
+  }
+}
+
+.header__link-menu {
+  width: 25px;
+  height: 25px;
+  border-top: 5px solid $text-color;
+  border-bottom: 5px solid $text-color;
+  align-items: center;
+  margin-left: 100px;
+  display: none;
+  color: $text-color;
+  transition: 0.5s;
+  padding: 0;
+  background-color: transparent;
+  outline: none;
+  &:hover {
+    border-color: $main-orange-outline;
+    &::before {
+      background-color: $main-orange-outline;
+    }
+  }
+  &:focus {
+    border-color: $main-orange-outline;
+    &::before {
+      background-color: $main-orange-outline;
+    }
+  }
+  &::before {
+    content: "";
+    display: block;
+    width: 25px;
+    height: 5px;
+    background-color: $text-color;
+    transition: 0.5s;
+  }
+
+  @include tablets() {
+    display: flex;
+  }
+
+  @include phones() {
+    margin: 0;
+  }
+}

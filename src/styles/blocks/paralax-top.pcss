@@ -1,0 +1,139 @@
+.top-section {
+  width: 100vw;
+  height: 1400px;
+
+  @include desktop() {
+    min-height: 1400px;
+  }
+
+  @include tablets() {
+    min-height: 100vh;
+  }
+
+  @include phones() {
+    max-height: 150vh;
+  }
+}
+
+.paralax-top {
+  position: absolute;
+  width: 100vw;
+  height: 1400px;
+
+  @include desktop() {
+    min-height: 1400px;
+  }
+
+  @include tablets() {
+    min-height: 100vh;
+    background: url("../images/content/tabletBg.png") no-repeat;
+    background-position: center center;
+    background-size: auto 100%;
+  }
+
+  @include phones() {
+    max-height: 150vh;
+    background: url("../images/content/phoneBg.png") no-repeat;
+    background-position: center center;
+    background-size: auto 100%;
+  }
+}
+
+.paralax-top__layer {
+  position: absolute;
+  top: 0;
+  min-width: 100%;
+  height: 100%;
+  will-change: transform;
+
+  .paralax-top__image {
+    position: absolute;
+    max-width: none;
+    max-height: none;
+    min-width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &:nth-child(1) {
+    z-index: 10;
+    .paralax-top__image {
+      top: 0;
+
+      @include desktop() {
+        width: 1400px;
+      }
+
+      @include tablets() {
+        display: none;
+      }
+    }
+  }
+  &:nth-child(2) {
+    z-index: 20;
+    .paralax-top__image {
+      top: 400px;
+
+      @include desktop() {
+        top: 320px;
+        width: 1400px;
+      }
+
+      @include tablets() {
+        display: none;
+      }
+    }
+  }
+  &:nth-child(3) {
+    z-index: 30;
+    .paralax-top__image {
+      top: 520px;
+
+      @include desktop() {
+        top: 425px;
+        width: 1400px;
+      }
+
+      @include tablets() {
+        display: none;
+      }
+    }
+  }
+  &:nth-child(4) {
+    z-index: 40;
+    .paralax-top__image {
+      top: 950px;
+
+      @include desktop() {
+        top: 750px;
+        width: 1600px;
+      }
+
+      @include tablets() {
+        display: none;
+      }
+    }
+  }
+  &:nth-child(5) {
+    z-index: 50;
+    .paralax-top__image {
+      bottom: 0;
+      height: 500px;
+
+      @include desktop() {
+        height: 500px;
+      }
+    }
+  }
+  &:nth-child(6) {
+    z-index: 60;
+    .paralax-top__image {
+      bottom: 0;
+      height: 500px;
+
+      @include desktop() {
+        height: 500px;
+      }
+    }
+  }
+}

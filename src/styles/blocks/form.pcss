@@ -1,0 +1,166 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__row {
+  display: flex;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.form__elem {
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 1;
+  position: relative;
+  transition: 0.5s;
+  border-bottom: 1px solid $text-color;
+  &:first-child {
+    margin-right: 50px;
+  }
+  &:hover {
+    border-bottom: 1px solid $main-orange-outline;
+    .form__elem-icon {
+      fill: $main-orange-outline;
+      stroke: $main-orange-outline;
+    }
+  }
+
+  @include phones() {
+    margin-bottom: 35px;
+    &:first-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.form__elem-label {
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+}
+
+.form__elem-area-label {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+}
+
+.form__elem-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  fill: $text-color;
+  stroke: $text-color;
+  transition: 0.5s;
+  margin-bottom: 10px;
+}
+
+.form__content {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.form__elem-title {
+  @include capitalize();
+}
+
+.form__input {
+  border-bottom: transparent;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  background-color: transparent;
+  width: 100%;
+  line-height: 48px;
+  cursor: text;
+  outline: none;
+
+  &:focus {
+    border: 1px solid $main-orange-outline;
+  }
+
+  @include opensans(400, normal, 18px);
+  color: $text-white;
+  &::placeholder {
+    color: $text-white;
+  }
+
+  @include phones() {
+    font-size: 14px;
+  }
+}
+
+.form__elem-area {
+  margin-bottom: 60px;
+  border-bottom: 1px solid $text-color;
+  display: flex;
+  transition: 0.5s;
+  position: relative;
+
+  &:hover {
+    border-bottom: 1px solid $main-orange-outline;
+    .form__elem-icon {
+      fill: $main-orange-outline;
+      stroke: $main-orange-outline;
+    }
+  }
+}
+
+.form__input--area {
+  padding-right: 50%;
+  outline: none;
+  &:focus {
+    border: 1px solid $main-orange-outline;
+  }
+
+  @include phones() {
+    padding-right: 0;
+  }
+}
+
+.form__submit {
+  color: $text-white;
+  background-color: $submit-btn-color;
+  width: 350px;
+  height: 80px;
+  position: relative;
+  z-index: 10;
+
+  @include opensans(400, normal, 18px);
+
+  @include capitalize();
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+  outline: none;
+  &:focus {
+    border: 1px solid $main-orange-outline;
+  }
+  &::after {
+    content: "";
+    display: block;
+    transition: 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -10;
+    opacity: 0;
+    background: linear-gradient(
+      +120deg,
+      $submit-btn-color,
+      $submit-btn-gradient
+    );
+  }
+
+  @include tablets() {
+    align-self: center;
+  }
+}

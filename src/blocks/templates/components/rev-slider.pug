@@ -1,0 +1,29 @@
+script(type='text/x-template')#rev-element
+    .container.reviews__container
+            .reviews__title
+                h2.section-title.reviews__title--margin что обо мне говорят
+                .reviews__controls
+                    slider-controlls(@slide="handleSlide")
+            slider-item(:elems="elems" order='order'  :currentIndex="currentIndex" ref='slider')
+
+
+script(type='text/x-template')#slider-controllsRev
+    .controls
+        button.controls__item.controls__backward--marg(type="button" @click="$emit('slide', 'back')")
+            +icon("arrow-down", "controls__icon controls__icon--left")
+        button.controls__item.controls__forward(type="button" @click="$emit('slide', 'next')")
+            +icon("arrow-down", "controls__icon")
+
+script(type='text/x-template')#slider-itemRev
+    .reviews__slider-wrapper
+        ul.reviews__slider(:ref='order')
+            li.reviews__slider-item( v-for="(elem,index) in elems" :key="elem.id")
+                blockquote.quote
+                    cite.quote__text {{elem.text}}
+                    .quote__author
+                        .user.user--line
+                            .user__avatar.user__avatar--small
+                                img(:src="`https://webdev-api.loftschool.com/${elem.photo}`" class="user__img" alt="фото автора отзыва")
+                            cite.user__data.user__data--direction
+                                .user__name {{elem.author}}
+                                .user__occ {{elem.occ}}

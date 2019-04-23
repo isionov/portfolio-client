@@ -1,0 +1,20 @@
+extends ./blocks/layout
+include ./mixins.pug
+        
+block maincontent
+  main.maincontent
+    //- start of wrapper for parallax bg
+    .top-section
+      include ./blocks/paralax_top
+      include ./blocks/hero_section
+    //- end of wrapper for parallax bg
+    include ./blocks/about_section
+    include ./blocks/values_section
+    include ./blocks/preview_section
+    //- start of wrapper for common bg of two sections
+    .bottom-section
+      include ./blocks/reviews_section
+      include ./blocks/connect_section
+    //- end of wrapper for common bg of two sections
+    include ./blocks/footer
+      

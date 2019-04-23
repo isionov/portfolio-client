@@ -1,0 +1,9 @@
+section.hero
+    include ./popup.pug
+    .container.hero__container
+        include ./header
+        .hero__content
+            include ./user-info.pug
+        button.hero__bottom-buttons(type="button")#hero__scroll-button
+            .hero__scroll-text Скролл
+            +icon("scroll","hero__scroll-icon")

@@ -1,0 +1,38 @@
+script(type="text/x-template")#preview-element
+    .preview__content
+        .preview__slider(:data-slide="currentIndex + 1")
+            slider-item(:elems="elems" order="first" :currentIndex="currentIndex")
+            slider-item(@slide="handleSlide" class="slider--small" :elems="elems" order="second" :currentIndex="currentIndex" :currentElem="currentElem") 
+            slider-controlls(@slide="handleSlide" :elems="elems")
+        preview-info(:elems="elems" :currentIndex="currentIndex" :currentElem="currentElem")
+
+
+
+script(type="text/x-template")#slider-controlls
+    .controls.controls--dark(v-if='elems.length')
+        button.controls__item.controls__backward--marg(type='button' @click="$emit('slide', 'back')")
+            +icon("arrow-down", "controls__icon controls__icon--left")
+        button.controls__item.controls__forward(type='button' @click="$emit('slide', 'next')")
+            +icon("arrow-down", "controls__icon")
+
+
+script(type="text/x-template")#slider-item
+    .slider(v-if='elems.length')
+        ul.slider__list(:ref="order")
+            li.slider__item(@click="$emit('slide', index)" v-for="(elem,index) in elems" :key="elem.id" :class="{'slider__item--active': currentElem && (currentElem.id === elem.id) }")
+                img(:src= 'elem.photo? `https://webdev-api.loftschool.com/${elem.photo}`: null' class="slider__img")
+
+script(type="text/x-template")#preview-info
+    .preview__info(v-if='elems.length')
+        .preview__info__btns
+            .btns
+                .btns__item(v-for="tag in tagsArray") {{tag}}
+        .preview__wrapper-subtitle
+            h3.section-title.section-title--dark {{currentElem.title}}
+        .preview__info__desc
+            p {{currentElem.description}}
+        .preview__info__link
+            a(:href="`http://${currentElem.link}`").img-link
+                .img-link__wrap
+                    +icon("link", "img-link__icon")
+                .img-link__text посмотреть сайт

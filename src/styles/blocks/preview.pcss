@@ -1,0 +1,142 @@
+.preview__title {
+  padding-top: 200px;
+  margin-bottom: 100px;
+
+  @include desktop() {
+    padding-top: 150px;
+    margin-bottom: 55px;
+  }
+
+  @include phones() {
+    padding-top: 100px;
+    margin-bottom: 29px;
+    text-align: center;
+  }
+}
+
+.preview__container {
+  max-width: 75vw;
+
+  @include tablets() {
+    max-width: 85vw;
+  }
+}
+
+.preview__content {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 200px;
+  justify-content: space-between;
+
+  @include tablets() {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 130px;
+  }
+}
+
+.preview__slider {
+  width: 54vw;
+  height: 30.5vw;
+  display: flex;
+  position: relative;
+  margin-right: 150px;
+
+  &::after {
+    content: attr(data-slide);
+    display: block;
+    z-index: -1;
+    color: #f0f0f0;
+
+    @include opensans(700, normal, 22vw);
+    line-height: 25vw;
+    position: absolute;
+    bottom: 4vw;
+    right: -8vw;
+
+    @include tablets() {
+      font-size: 300px;
+      bottom: 13vw;
+      right: -12vw;
+    }
+
+    @include phones() {
+      content: none;
+    }
+  }
+
+  @include desktop() {
+    margin-right: 100px;
+  }
+
+  @include tablets() {
+    width: 75vw;
+    height: 47vw;
+    margin-right: 0;
+    margin-bottom: 50px;
+    align-self: flex-start;
+  }
+
+  @include phones() {
+    width: 100%;
+  }
+}
+
+.preview__slider_temporary-img {
+  z-index: 10;
+  position: relative;
+}
+
+.preview__slider-wrap {
+  display: none;
+}
+
+.preview__info {
+  width: 22vw;
+  position: relative;
+  z-index: 50;
+
+  @include desktop() {
+    width: 350px;
+  }
+
+  @include tablets() {
+    width: 60vw;
+    text-align: center;
+  }
+
+  @include phones() {
+    width: 60vw;
+    text-align: left;
+    align-self: flex-start;
+    align-items: flex-start;
+  }
+}
+
+.preview__info__btns {
+  margin-bottom: 45px;
+  display: flex;
+
+  @include tablets() {
+    justify-content: center;
+  }
+
+  @include phones() {
+    justify-content: flex-start;
+  }
+}
+
+.preview__wrapper-subtitle {
+  margin-bottom: 45px;
+}
+
+.preview__subtitle {
+  font-size: 30px;
+  display: inline-block;
+}
+
+.preview__info__desc {
+  margin-bottom: 50px;
+  color: $text-dark;
+}

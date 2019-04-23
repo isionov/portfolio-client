@@ -1,0 +1,115 @@
+.values {
+  background: url("../images/content/skillsBg.png") center center/ cover
+    no-repeat;
+  position: relative;
+  z-index: 60;
+  margin-top: -3px;
+
+  @include tablets() {
+    overflow: hidden;
+  }
+}
+
+.values__container {
+  display: flex;
+  flex-direction: column;
+  padding: 150px 150px 140px 150px;
+  justify-content: center;
+
+  @include desktop() {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  @include tablets() {
+    padding-right: 0;
+    padding-left: 0;
+    padding-top: 100px;
+    padding-bottom: 355px;
+    align-items: center;
+  }
+
+  @include phones() {
+    padding-bottom: 250px;
+  }
+}
+
+.values__title {
+  padding: 0 0;
+  padding-bottom: 50px;
+  text-align: center;
+
+  @include desktop() {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  @include tablets() {
+    max-width: 320px;
+    padding-bottom: 25px;
+  }
+
+  @include phones() {
+    max-width: 460px;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: left;
+  }
+}
+
+.values__desc {
+  padding: 0 300px;
+  padding-bottom: 90px;
+
+  @include desktop() {
+    padding: 0 200px;
+    padding-bottom: 90px;
+  }
+
+  @include tabletsBig() {
+    padding: 0 100px;
+    padding-bottom: 90px;
+  }
+
+  @include tablets() {
+    padding-right: 22%;
+    padding-left: 22%;
+    text-align: center;
+    padding-bottom: 50px;
+  }
+
+  @include phones() {
+    text-align: left;
+    max-width: 460px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.values__wrapper-img {
+  position: absolute;
+  width: 40vw;
+  left: 0;
+  bottom: -87px;
+
+  @include desktop() {
+    bottom: -66px;
+  }
+
+  @include tablets() {
+    transform: translate(50%, 17%) rotate(-90deg);
+    left: unset;
+    right: 50%;
+    bottom: 0;
+    width: 400px;
+  }
+
+  @include phones() {
+    width: 260px;
+  }
+}
+
+.values__img {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,18 @@
+.section-title {
+  @include opensans(700, normal, 36px);
+  display: inline-block;
+
+  @include capitalize();
+  color: #fff;
+  &--dark {
+    color: #2d3c4e;
+  }
+
+  @include tablets() {
+    font-size: 30px;
+  }
+
+  @include phones() {
+    font-size: 24px;
+  }
+}

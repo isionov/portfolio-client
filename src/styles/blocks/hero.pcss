@@ -1,0 +1,93 @@
+.hero {
+  color: $text-white;
+  min-height: 1400px;
+  position: relative;
+
+  @include desktop() {
+    min-height: 1400px;
+  }
+
+  @include tablets() {
+    min-height: 100vh;
+  }
+
+  @include phones() {
+    min-height: 100vh;
+  }
+}
+
+.hero__wrapper-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  display: flex;
+  &:last-child {
+    top: 520px;
+  }
+}
+
+.hero__bg {
+  width: 100%;
+}
+
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: relative;
+}
+
+.hero__content {
+  display: flex;
+  justify-content: center;
+  padding-top: 300px;
+  position: relative;
+  z-index: 25;
+
+  @include desktop() {
+    padding-top: 200px;
+  }
+
+  @include tablets() {
+    padding-top: 200px;
+  }
+
+  @include phones() {
+    z-index: 70;
+    padding-top: 70px;
+  }
+}
+
+.hero__bottom-buttons {
+  outline: none;
+  color: $text-white;
+  position: absolute;
+  z-index: 90;
+  left: 50%;
+  top: 85%;
+  display: flex;
+  transform: translate(-50%);
+  transition: 0.5s;
+  align-self: center;
+
+  &:hover {
+    color: $main-orange-outline;
+    .hero__scroll-icon {
+      fill: $main-orange-outline;
+    }
+  }
+  &:focus {
+    border: 1px solid $main-orange-outline;
+  }
+}
+
+.hero__scroll-text {
+  margin-right: 10px;
+}
+
+.hero__scroll-icon {
+  height: 30px;
+  fill: $text-white;
+  transition: 0.5s;
+}

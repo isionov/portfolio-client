@@ -1,0 +1,52 @@
+.popup {
+  display: flex;
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  left: 60%;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateX(110%);
+  transition: 0.5s;
+  will-change: transform;
+
+  @include phones() {
+    left: 0;
+  }
+  .nav {
+    margin-bottom: 15px;
+  }
+  .nav__list {
+    flex-direction: column;
+    color: $text-dark;
+    .nav__item {
+      margin-bottom: 15px;
+      margin-right: 0;
+    }
+  }
+  .socials {
+    width: 150px;
+  }
+}
+.popup__close {
+  width: 25px;
+  height: 25px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 7%;
+  right: 15%;
+}
+.popup__icon-close {
+  fill: $text-dark;
+  transition: 0.5s;
+  &:hover {
+    fill: $main-orange-outline;
+  }
+}
