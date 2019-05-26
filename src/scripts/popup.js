@@ -28,7 +28,7 @@
     if (parentSocials || parentLinkMenu || parentScroll) {
       e.preventDefault();
     }
-    console.log(parentScroll);
+
     if ((parentSocials || parentLinkMenu || parentScroll) && isVisible)
       popup.style.transform = ``;
   }

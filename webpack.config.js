@@ -9,7 +9,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = (env, argv) => {
   const isProductionBuild = argv.mode === "production";
-  const publicPath = "/dist/";
+  const publicPath = "/";
 
   const pcss = {
     test: /\.(p|post|)css$/,
@@ -37,10 +37,17 @@ module.exports = (env, argv) => {
 
   const files = {
     test: /\.(png|jpe?g|gif?)$/i,
-    loader: "file-loader",
-    options: {
-      name: "[hash].[ext]"
-    }
+    use: [
+      {
+        loader: "file-loader",
+        options: {
+          name: "[hash].[ext]"
+        }
+      },
+      {
+        loader: "image-webpack-loader"
+      }
+    ]
   };
 
   const fonts = {

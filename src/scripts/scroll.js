@@ -14,7 +14,7 @@
 
   const sections = document.querySelectorAll("section");
   const headerLinks = document.querySelectorAll("[href^='#section-']");
-  const V = 1;
+  const V = 0.125;
 
   for (const link of headerLinks) {
     link.addEventListener("click", function(e) {
