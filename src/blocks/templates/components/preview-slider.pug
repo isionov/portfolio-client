@@ -20,7 +20,7 @@ script(type="text/x-template")#slider-item
     .slider(v-if='elems.length')
         ul.slider__list(:ref="order")
             li.slider__item(@click="$emit('slide', index)" v-for="(elem,index) in elems" :key="elem.id" :class="{'slider__item--active': currentElem && (currentElem.id === elem.id) }")
-                img(:src= 'elem.photo? `https://webdev-api.loftschool.com/${elem.photo}`: null' class="slider__img")
+                img(:src= 'elem.photo? `http://www.iliaion-dev.ru/${elem.photo}`: null' class="slider__img")
 
 script(type="text/x-template")#preview-info
     .preview__info(v-if='elems.length')

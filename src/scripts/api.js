@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://webdev-api.loftschool.com",
+  baseURL: "http://www.iliaion-dev.ru/api",
+  // baseURL: "https://webdev-api.loftschool.com",
   headers: {
     "Content-Type": "application/json"
   }
@@ -16,19 +17,19 @@ const getAllCards = async () => {
 };
 
 const getAllSkills = async () => {
-  const rawData = await instance.get(`/skills/${id}`);
+  const rawData = await instance.get(`/skills`);
 
   return rawData.data;
 };
 
 export const getAllWorks = async () => {
-  const rawData = await instance.get(`/works/${id}`);
+  const rawData = await instance.get(`/works`);
 
   return rawData.data;
 };
 
 export const getAllRevs = async () => {
-  const rawData = await instance.get(`/reviews/${id}`);
+  const rawData = await instance.get(`/reviews`);
 
   return rawData.data;
 };

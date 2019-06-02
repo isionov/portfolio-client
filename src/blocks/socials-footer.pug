@@ -1,6 +1,7 @@
 ul.socials.socials--rounded
     -var icons = ['insta','vk','github']
+    -var path = {insta:"#",vk:"https://vk.com/id131593516",github:"https://github.com/isionov"}
     each icon in icons
         li.socials__item
-            a(href='#').socials_link
+            a(href=`${path[icon]}`).socials_link
                 +icon(`${icon}`, 'socials_icon')

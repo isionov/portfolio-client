@@ -41,7 +41,7 @@ module.exports = (env, argv) => {
       {
         loader: "file-loader",
         options: {
-          name: "[hash].[ext]"
+          name: "assets/img/content/[hash].[ext]"
         }
       },
       {
@@ -54,7 +54,7 @@ module.exports = (env, argv) => {
     test: /\.(woff|woff2?)$/i,
     loader: "file-loader",
     options: {
-      name: "fonts/[hash].[ext]"
+      name: "assets/fonts/[hash].[ext]"
     }
   };
 
@@ -65,7 +65,8 @@ module.exports = (env, argv) => {
         loader: "svg-sprite-loader",
         options: {
           extract: true,
-          spriteFilename: svgPath => `sprite${svgPath.substr(-4)}`
+          spriteFilename: svgPath =>
+            `assets/img/svg/sprite${svgPath.substr(-4)}`
         }
       },
       "svg-transform-loader",
@@ -100,12 +101,11 @@ module.exports = (env, argv) => {
 
   const config = {
     entry: {
-      main: ["@babel/polyfill", "./src/main.js"],
-      admin: "./src/admin/main.js"
+      main: ["@babel/polyfill", "./src/main.js"]
     },
     output: {
       path: path.resolve(__dirname, "./dist"),
-      filename: "[name].[hash].build.js",
+      filename: "assets/js/[name].[hash].build.js",
       publicPath: isProductionBuild ? publicPath : "",
       chunkFilename: "[chunkhash].js"
     },
@@ -133,11 +133,6 @@ module.exports = (env, argv) => {
         template: "src/index.pug",
         chunks: ["main"]
       }),
-      new HtmlWebpackPlugin({
-        template: "src/admin/index.pug",
-        filename: "admin/index.html",
-        chunks: ["admin"]
-      }),
       new SpriteLoaderPlugin({ plainSprite: true }),
       new VueLoaderPlugin()
     ],
@@ -153,7 +148,7 @@ module.exports = (env, argv) => {
         }
       }),
       new MiniCssExtractPlugin({
-        filename: "[name].[contenthash].css",
+        filename: "assets/css/[name].[contenthash].css",
         chunkFilename: "[contenthash].css"
       })
     ]);
