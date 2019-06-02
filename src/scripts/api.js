@@ -8,10 +8,8 @@ const instance = axios.create({
   }
 });
 
-const id = 112;
-
 const getAllCards = async () => {
-  const rawData = await instance.get(`/categories/${id}`);
+  const rawData = await instance.get(`/categories`);
 
   return rawData.data;
 };

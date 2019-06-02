@@ -1,30 +1,5 @@
 import Vue from "vue";
-import axios from "axios";
 import { getSkillsArr } from "cusomScripts/api.js";
-
-// const getAllCards = async userId => {
-//   const instance = axios.create({
-//     baseURL: "https://webdev-api.loftschool.com",
-//     headers: {
-//       "Content-Type": "application/json"
-//     }
-//   });
-
-//   const rawData = await instance.get(`/categories/${userId}`);
-//   return rawData.data;
-// };
-
-// const getAllSkills = async userId => {
-//   const instance = axios.create({
-//     baseURL: "https://webdev-api.loftschool.com",
-//     headers: {
-//       "Content-Type": "application/json"
-//     }
-//   });
-
-//   const rawData = await instance.get(`/skills/${userId}`);
-//   return rawData.data;
-// };
 
 const skill = {
   template: "#skill",
