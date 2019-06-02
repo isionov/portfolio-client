@@ -1,4 +1,5 @@
 import Vue from "vue";
+import axios from "axios";
 import { getSkillsArr } from "cusomScripts/api.js";
 
 const skill = {
@@ -15,7 +16,7 @@ const skill = {
       );
 
       circle.style.strokeDasharray =
-        dashOffset * (1 + this.skillPercent / dashOffset) + "%";
+        dashOffset * (1 + this.skillPercent / 100) + "%";
     }
   },
   mounted() {
