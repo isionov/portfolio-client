@@ -8,8 +8,9 @@
                 li.nav__item
                     a.nav__link(href=`${item[1]}`) #{item[0]}
     ul.socials
+        -var path = {insta:"#",vk:"https://vk.com/id131593516",github:"https://github.com/isionov"}
         -var icons = ['insta','vk','github']
         each icon in icons
             li.socials__item
-                a(href='#').socials_link
-                    +icon(`${icon}`, 'socials_icon socials_icon--dark')
+                +icon(`${icon}`, 'socials_icon socials_icon--dark')
+                a(href=`${path[icon]}`).socials_link

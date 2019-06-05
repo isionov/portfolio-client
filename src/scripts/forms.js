@@ -1,6 +1,6 @@
 import params from "../styles/variables.json";
 
-(function () {
+(function() {
   const errorColor = params["error-color"];
   const myForm = document.querySelector(".form.connect__content");
   const submitBtn = document.querySelector("button.form__submit");

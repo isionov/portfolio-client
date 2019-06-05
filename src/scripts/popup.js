@@ -25,7 +25,8 @@
     let parentSocials = e.target.closest(".socials__item");
     let parentScroll = e.target.closest(".hero__bottom-buttons");
     let isVisible = popup.style.transform ? true : false;
-    if (parentSocials || parentLinkMenu || parentScroll) {
+
+    if (parentLinkMenu || parentScroll) {
       e.preventDefault();
     }
 

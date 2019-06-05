@@ -3,5 +3,5 @@ ul.socials.socials--visibility
     -var path = {insta:"#",vk:"https://vk.com/id131593516",github:"https://github.com/isionov"}
     each icon in icons
         li.socials__item
+            +icon(`${icon}`, 'socials_icon')
             a(href=`${path[icon]}`).socials_link
-                +icon(`${icon}`, 'socials_icon')
